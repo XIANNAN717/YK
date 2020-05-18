@@ -1,5 +1,6 @@
 # com.tencent.mm:id/m7
-# 小程序下拉选择顺丰： find_elements_by_id(com.tencenet.mm:id/ka")[0].click() 返回的是个列表，是第3个菜单，所以要用复数
+# 小程序下拉
+# 选择顺丰： find_elements_by_id("com.tencenet.mm:id/ka")[0].click() 返回的是个列表，是第3个菜单，所以要用复数
 
 
 from appium import webdriver
@@ -32,9 +33,10 @@ def swipe_down(driver, t=500, n=1):
 
 swipe_down(driver)
 
+driver.find_elements_by_id("com.tencenet.mm:id/ka")[0].click()
 
-driver.find_element_by_id("com.tencent.mm:id/r_").click() # 点击搜索图标
-driver.find_element_by_id("com.tencent.mm:id/m7").send_keys("zhonganzu") # 键入搜索内容
-sleep(3)
+# 注意 小程序，无需切换到Webview里，及不需要操作driver.switch_to.context("WEBVIEW_com.tencent.mm:tools")
+driver.find_element_by_id("com.tencenet.mm:id/ka")[0].click()
+
 
 
