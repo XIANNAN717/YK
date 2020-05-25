@@ -10,7 +10,8 @@ from public.po.base_view import BaseView
 
 des = desired()
 b = BaseView(des)
-
+import time
+time.sleep(10)
 b.swipe_down()
 
 

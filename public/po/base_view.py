@@ -75,12 +75,12 @@ class BaseView():
             self.driver.swipe(x1, y1, x1, y2, t)
 
     # 向下滑动
-    def swipe_down(self, t=500, n=1):
-        s = self.driver.get_window_size()
-        """向下屏幕滑动"""
-        x1 = s["width"] * 0.5  # x1 坐标
-        y1 = s["height"] * 0.25  # 起点y1坐标
-        y2 = s["height"] * 0.75  # 终点y2坐标
+    def swipe_down(self, t=300, n=2):
+        s = self.get_size()
+        print(s)
+        x1 = int(s[0] * 0.5)  # x坐标
+        y1 = int(s[1] * 0.25)  # 起点y坐标
+        y2 = int(s[1] * 0.85)  # 终点y坐标
         for i in range(n):
             self.driver.swipe(x1, y1, x1, y2, t)
 
